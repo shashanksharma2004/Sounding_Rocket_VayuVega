@@ -1,5 +1,195 @@
 # Sounding_Rocket_VayuVega
 This is the open simulator project for the model of sounding rocket done by me at IIMT UNIVERSITY, i welcome the changes if any. 
+# 🚀 6-DOF Rocket Flight Simulator
+
+## 📌 Project Overview
+
+This project is a Python-based **6-Degree-of-Freedom (6-DOF) Rocket Flight Simulation Framework** designed to model the complete flight behavior of a rocket under realistic aerospace conditions.
+
+Unlike simple altitude prediction models, this simulator considers the rocket as a rigid body and calculates its movement in three-dimensional space by combining:
+
+- Translational motion
+- Rotational motion
+- Aerodynamic forces
+- Propulsion
+- Atmospheric effects
+- Wind disturbances
+- Structural vibration analysis
+
+The objective of this project is to create an engineering simulation environment for studying rocket performance, stability, and structural behavior.
+
+---
+
+# ✨ Key Features
+
+## 1. Six-Degree-of-Freedom Flight Dynamics
+
+The simulation models all six degrees of freedom:
+
+### Translational Motion:
+- X-axis movement (Downrange)
+- Y-axis movement (Lateral motion)
+- Z-axis movement (Altitude)
+
+### Rotational Motion:
+- Roll
+- Pitch
+- Yaw
+
+The equations of motion are solved using numerical integration through SciPy's Runge-Kutta solver.
+
+---
+
+# 🔥 Propulsion System Modeling
+
+The simulator includes a rocket motor database containing:
+
+- Motor total mass
+- Propellant mass
+- Burn duration
+- Thrust-time curves
+
+The thrust at any given time is calculated using interpolation of experimental thrust curves.
+
+The model also accounts for:
+
+- Propellant consumption
+- Changing rocket mass
+- Center of Gravity movement
+- Variation in moment of inertia
+
+---
+
+# 🌎 Atmospheric and Wind Modeling
+
+The simulator uses an International Standard Atmosphere (ISA) model to calculate:
+
+- Air density
+- Temperature variation
+- Speed of sound
+
+Different wind environments can be simulated:
+
+- No wind
+- Constant crosswind
+- Wind shear
+- Gusty wind conditions
+- Custom wind profiles
+
+Wind effects are transformed into the rocket body coordinate system for aerodynamic calculations.
+
+---
+
+# 🛰️ Aerodynamic Analysis
+
+The aerodynamic model calculates:
+
+- Drag force
+- Normal force
+- Side force
+- Pitch moment
+- Yaw moment
+- Roll damping
+
+The Center of Pressure (CP) is estimated using simplified Barrowman aerodynamic equations.
+
+The simulator tracks the relationship between:
+
+- Center of Gravity (CG)
+- Center of Pressure (CP)
+
+to evaluate rocket stability.
+
+---
+
+# ⚖️ Stability Analysis
+
+During flight, the simulator calculates:
+
+### Static Margin
+
+\[
+Static\ Margin = \frac{CP-CG}{Rocket\ Diameter}
+\]
+
+The static margin is monitored throughout the flight to determine whether the rocket remains stable during:
+
+- Motor burn
+- Maximum velocity
+- Propellant depletion
+- Descent phase
+
+---
+
+# 🏗️ Structural Vibration Analysis
+
+The structural module estimates rocket bending frequencies using:
+
+- Euler-Bernoulli beam theory
+- Free-free beam vibration assumptions
+
+It calculates:
+
+- First bending mode frequency
+- Second bending mode frequency
+
+The simulator also checks possible resonance conditions caused by vortex shedding during high-speed flight.
+
+---
+
+# 📊 Simulation Outputs
+
+The program generates:
+
+### Rocket Geometry Visualization
+
+Shows:
+- Rocket body
+- Nose cone
+- Fins
+- Center of Gravity
+- Center of Pressure
+
+### Flight Performance Graphs
+
+Includes:
+
+- Altitude vs Time
+- Downrange Distance vs Time
+- Velocity Profile
+
+### Stability Graphs
+
+Shows:
+
+- Dynamic CG movement
+- CP location
+- Static Margin variation
+
+### Structural Analysis Graphs
+
+Displays:
+
+- First bending mode frequency
+- Second bending mode frequency
+
+---
+
+# 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Python | Main programming language |
+| NumPy | Mathematical calculations |
+| SciPy | Numerical integration |
+| Matplotlib | Data visualization |
+| ipywidgets | Interactive simulation controls |
+| Object-Oriented Programming | Rocket system modelling |
+
+---
+
+# 📂 Project Structure
+
 
 
 
